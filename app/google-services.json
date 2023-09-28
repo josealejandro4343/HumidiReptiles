@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "927550436770",
+    "firebase_url": "https://humidireptiles-8fa35-default-rtdb.firebaseio.com",
+    "project_id": "humidireptiles-8fa35",
+    "storage_bucket": "humidireptiles-8fa35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:927550436770:android:bc95378860bfefa7146efb",
+        "android_client_info": {
+          "package_name": "com.example.humidireptiles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "927550436770-8bvrdtrql5es70rja2lm767mh67cftg4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcY59ZhM6EWjBKPJVAi1dlNNmSyU3kI7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "927550436770-8bvrdtrql5es70rja2lm767mh67cftg4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

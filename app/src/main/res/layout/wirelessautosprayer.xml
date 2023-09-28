@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="500dp"
+    android:layout_gravity="center"
+    android:background="@drawable/roundbckgrnd">
+
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:fontFamily="@font/motiva"
+        android:text="Auto Sprayer"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sprayerbutton"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:text="TURN ON SPRAYER"
+        android:textColor="@color/black"
+        android:background="@drawable/roundbckgrndbutton"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView18"
+        app:layout_constraintVertical_bias="0.164" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/waterpumpbutton"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:background="@drawable/roundbckgrndbutton"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_marginTop="24dp"
+        android:text="TURN ON WATER PUMP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sprayerbutton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Basking Light: "
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/switchBaskingLight"
+        app:layout_constraintStart_toStartOf="@+id/sprayerbutton"
+        app:layout_constraintTop_toTopOf="@+id/switchBaskingLight" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchBaskingLight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:textOff="OFF"
+        android:textOn="ON"
+        android:thumb="@drawable/thumb"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.721"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/waterpumpbutton"
+        app:showText="true"
+        app:track="@drawable/track" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

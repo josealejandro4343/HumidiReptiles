@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="15dp"
+    app:cardElevation="0dp"
+    android:clipToPadding="false"
+    android:paddingBottom="8dp"
+    android:backgroundTint="@android:color/transparent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@android:color/transparent"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <ImageButton
+            android:id="@+id/PetImage"
+            android:layout_width="118dp"
+            android:layout_height="118dp"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:clickable="true"
+            android:cropToPadding="false"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:maxWidth="120dp"
+            android:maxHeight="120dp"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/typeofPet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/motiva"
+            android:text="Turtle (default)"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/PetImage"
+            app:layout_constraintTop_toTopOf="@+id/PetImage" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/motiva"
+            android:text="Ideal Temp:"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/typeofPet"
+            app:layout_constraintTop_toBottomOf="@+id/typeofPet" />
+
+        <TextView
+            android:id="@+id/required_temp_sil"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView11"
+            app:layout_constraintStart_toEndOf="@+id/textView11"
+            app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/required_temp_silmax"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/required_temp_sil"
+            app:layout_constraintStart_toEndOf="@+id/textView24"
+            app:layout_constraintTop_toTopOf="@+id/required_temp_sil" />
+
+        <TextView
+            android:id="@+id/required_temp_silmaxsymbol"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="°C"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/required_temp_silmax"
+            app:layout_constraintStart_toEndOf="@+id/required_temp_silmax"
+            app:layout_constraintTop_toTopOf="@+id/required_temp_silmax" />
+
+        <TextView
+            android:id="@+id/required_temp_silmaxsymbol2"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="°C"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/required_water_temp_silmax"
+            app:layout_constraintStart_toEndOf="@+id/required_water_temp_silmax"
+            app:layout_constraintTop_toTopOf="@+id/required_water_temp_silmax" />
+
+        <TextView
+            android:id="@+id/required_temp_silmaxsymbol4"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="%"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/required_humid_silmax"
+            app:layout_constraintStart_toEndOf="@+id/required_humid_silmax"
+            app:layout_constraintTop_toTopOf="@+id/required_humid_silmax" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/motiva"
+            android:text="Ideal Water Temp:"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textView11"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+        <TextView
+            android:id="@+id/required_water_temp_sil"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView12"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/required_water_temp_silmax"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/required_water_temp_sil"
+            app:layout_constraintStart_toEndOf="@+id/textView25"
+            app:layout_constraintTop_toTopOf="@+id/required_water_temp_sil"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/motiva"
+            android:text="Ideal Humidity:"
+            android:textColor="@color/black"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/required_humid_sil"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView13"
+            app:layout_constraintStart_toEndOf="@+id/textView13"
+            app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+        <TextView
+            android:id="@+id/required_humid_silmax"
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/required_humid_sil"
+            app:layout_constraintStart_toEndOf="@+id/textView26"
+            app:layout_constraintTop_toTopOf="@+id/required_humid_sil" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/required_temp_sil"
+            app:layout_constraintStart_toEndOf="@+id/required_temp_sil"
+            app:layout_constraintTop_toTopOf="@+id/required_temp_sil" />
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/required_temp_sil"
+            app:layout_constraintStart_toEndOf="@+id/required_temp_sil"
+            app:layout_constraintTop_toTopOf="@+id/required_temp_sil" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/required_water_temp_sil"
+            app:layout_constraintStart_toEndOf="@+id/required_water_temp_sil"
+            app:layout_constraintTop_toTopOf="@+id/required_water_temp_sil" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/required_humid_sil"
+            app:layout_constraintStart_toEndOf="@+id/required_humid_sil"
+            app:layout_constraintTop_toTopOf="@+id/required_humid_sil" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="160dp"
+        android:background="#1D2B83"
+        />
+</RelativeLayout>

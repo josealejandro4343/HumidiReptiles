@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EAF6D1"
+    tools:context=".Dashboard">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#C0E474"
+        android:contentInsetStart="0dp"
+        android:contentInsetLeft="0dp"
+        android:contentInsetEnd="0dp"
+        android:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetLeft="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="409dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <TextView
+                android:id="@+id/titletxt2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/agencyfbreg"
+                android:gravity="center_vertical"
+                android:text="\tHumidiReptiles - Dashboard"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:drawableLeftCompat="@drawable/drawableicon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <include
+                layout="@layout/bell"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/monitor"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:contentDescription="Please connect to IP."
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="HardcodedText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="Connect"
+        app:layout_constraintEnd_toEndOf="@+id/monitor"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ip" />
+
+    <ToggleButton
+        android:id="@+id/flash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:enabled="false"
+        android:text="Flash On"
+        android:textOff="FLASH OFF"
+        android:textOn="FLASH ON"
+        app:layout_constraintBottom_toBottomOf="@+id/monitor"
+        app:layout_constraintStart_toStartOf="@+id/monitor" />
+
+    <TextView
+        android:id="@+id/rssi"
+        android:layout_width="99dp"
+        android:layout_height="32dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/monitor"
+        app:layout_constraintTop_toTopOf="@+id/flash" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/monitor"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/ideal_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text=""
+        android:textColor="#DFD61010"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView9"
+        app:layout_constraintStart_toStartOf="@+id/textViewIdealR"
+        app:layout_constraintTop_toTopOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/ideal_temp_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#DFD61010"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ideal_temp"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toEndOf="@+id/viewhz2"
+        app:layout_constraintTop_toTopOf="@+id/ideal_temp"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/ideal_water_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22"
+        android:textColor="#DFD61010"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView19"
+        app:layout_constraintStart_toStartOf="@+id/ideal_temp"
+        app:layout_constraintTop_toTopOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/ideal_water_tempmax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22"
+        android:textColor="#DFD61010"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ideal_water_temp"
+        app:layout_constraintEnd_toEndOf="@+id/viewhz3"
+        app:layout_constraintStart_toStartOf="@+id/viewhz2"
+        app:layout_constraintTop_toTopOf="@+id/ideal_water_temp" />
+
+    <TextView
+        android:id="@+id/ideal_humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21"
+        android:textColor="#DFD61010"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView21"
+        app:layout_constraintStart_toStartOf="@+id/ideal_water_temp"
+        app:layout_constraintTop_toTopOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/ideal_humidity_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21"
+        android:textColor="#DFD61010"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ideal_water_tempmax"
+        app:layout_constraintStart_toStartOf="@+id/ideal_water_tempmax"
+        app:layout_constraintTop_toTopOf="@+id/ideal_humidity" />
+
+    <ProgressBar
+        android:id="@+id/progressBarWatTemp2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="22dp"
+        android:layout_height="23dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#3A9262"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="@+id/encloTemp2"
+        app:layout_constraintEnd_toEndOf="@+id/encloTemp2"
+        app:layout_constraintStart_toStartOf="@+id/encloTemp2"
+        app:layout_constraintTop_toTopOf="@+id/water_temp" />
+
+
+    <ImageButton
+        android:id="@+id/WirelessSprayerbtnDash"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/was"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="ShowPopupAutoSprayer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/monitor"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/petIcon"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="70dp"
+        android:background="@color/white"
+        android:clickable="false"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="ShowPopup"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/monitor"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ProgressBar
+        android:id="@+id/LoadImage"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#3A9262"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="@+id/petIcon"
+        app:layout_constraintEnd_toEndOf="@+id/petIcon"
+        app:layout_constraintStart_toStartOf="@+id/petIcon"
+        app:layout_constraintTop_toTopOf="@+id/petIcon" />
+
+    <ImageButton
+        android:id="@+id/feedingSchedulebtnDash"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/feedingsched"
+        android:clickable="false"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="@+id/WirelessSprayerbtnDash"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/WirelessSprayerbtnDash"
+        app:layout_constraintTop_toBottomOf="@+id/WirelessSprayerbtnDash"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/encloTemp"
+        android:layout_width="116dp"
+        android:layout_height="110dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/encloTemp2"
+        app:srcCompat="@drawable/enclosuretemp"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/encloTemp2"
+        android:layout_width="116dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Status"
+        app:srcCompat="@drawable/watertemp"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/encloTemp3"
+        android:layout_width="116dp"
+        android:layout_height="110dp"
+        android:layout_marginEnd="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/encloTemp"
+        app:srcCompat="@drawable/relativehumid"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/motiva"
+        android:text=""
+        android:textColor="#3A9262"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/encloTemp"
+        app:layout_constraintEnd_toEndOf="@+id/encloTemp"
+        app:layout_constraintStart_toStartOf="@+id/encloTemp"
+        app:layout_constraintTop_toTopOf="@+id/encloTemp"
+        app:layout_constraintVertical_bias="0.986" />
+
+    <TextView
+        android:id="@+id/water_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/motiva"
+        android:text=""
+        android:textColor="#3A9262"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/encloTemp2"
+        app:layout_constraintEnd_toEndOf="@+id/encloTemp2"
+        app:layout_constraintStart_toStartOf="@+id/encloTemp2"
+        app:layout_constraintTop_toTopOf="@+id/temp"
+        app:layout_constraintVertical_bias="0.277" />
+
+    <TextView
+        android:id="@+id/hum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/motiva"
+        android:text=""
+        android:textColor="#3A9262"
+        android:textSize="23sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/encloTemp3"
+        app:layout_constraintEnd_toEndOf="@+id/encloTemp3"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/encloTemp3" />
+
+    <com.ekn.gruzer.gaugelibrary.HalfGauge
+        android:id="@+id/IdGauge"
+        android:layout_width="166dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="75dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/petIcon" />
+
+    <com.ekn.gruzer.gaugelibrary.HalfGauge
+        android:id="@+id/IdGauge2"
+        android:layout_width="112dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="67dp"
+        app:layout_constraintEnd_toEndOf="@+id/encloTemp2"
+        app:layout_constraintStart_toStartOf="@+id/encloTemp2"
+        app:layout_constraintTop_toTopOf="@+id/feedingSchedulebtnDash" />
+
+    <com.ekn.gruzer.gaugelibrary.HalfGauge
+        android:id="@+id/IdGaugeHum"
+        android:layout_width="112dp"
+        android:layout_height="94dp"
+        app:layout_constraintBottom_toBottomOf="@+id/IdGauge2"
+        app:layout_constraintEnd_toEndOf="@+id/encloTemp3"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/encloTemp3"
+        app:layout_constraintTop_toTopOf="@+id/IdGauge2" />
+
+    <TextView
+        android:id="@+id/StatusWaterTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/motiva"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:text="READING.."
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/IdGauge2"
+        app:layout_constraintStart_toStartOf="@+id/IdGauge2"
+        app:layout_constraintTop_toBottomOf="@+id/IdGauge2" />
+
+    <TextView
+        android:id="@+id/statusHum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/motiva"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:text="READING.."
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/IdGaugeHum"
+        app:layout_constraintStart_toStartOf="@+id/IdGaugeHum"
+        app:layout_constraintTop_toBottomOf="@+id/IdGauge2" />
+
+    <TextView
+        android:id="@+id/Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/motiva"
+        android:shadowColor="@color/black"
+        android:shadowDx="2"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:text="READING.."
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/statusHum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/IdGauge" />
+
+    <ProgressBar
+        android:id="@+id/progressBarencTemp"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="22dp"
+        android:layout_height="23dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#3A9262"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="@+id/encloTemp"
+        app:layout_constraintEnd_toEndOf="@+id/encloTemp"
+        app:layout_constraintStart_toStartOf="@+id/encloTemp"
+        app:layout_constraintTop_toTopOf="@+id/temp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarWatTemp"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="22dp"
+        android:layout_height="23dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#3A9262"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="@+id/encloTemp2"
+        app:layout_constraintEnd_toEndOf="@+id/encloTemp2"
+        app:layout_constraintStart_toStartOf="@+id/encloTemp2"
+        app:layout_constraintTop_toTopOf="@+id/water_temp" />
+
+    <ProgressBar
+        android:id="@+id/progressBarHum"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="22dp"
+        android:layout_height="23dp"
+        android:indeterminate="true"
+        android:indeterminateTint="#3A9262"
+        android:indeterminateTintMode="src_atop"
+        app:layout_constraintBottom_toBottomOf="@+id/encloTemp3"
+        app:layout_constraintEnd_toEndOf="@+id/encloTemp3"
+        app:layout_constraintStart_toStartOf="@+id/encloTemp3"
+        app:layout_constraintTop_toTopOf="@+id/hum" />
+
+    <EditText
+        android:id="@+id/ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter IP Address"
+        android:inputType="textPersonName"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/monitor"
+        app:layout_constraintEnd_toEndOf="@+id/monitor"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/monitor"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.353" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/motiva"
+        android:text="Click image to configure\n temperature &amp; humidity \nranges for your pet"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/petIcon"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/petIcon"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="124dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="1dp"
+        android:background="#1D2B83"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/petIcon"
+        app:layout_constraintTop_toTopOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="124dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="1dp"
+        android:background="#1D2B83"
+        app:layout_constraintBottom_toTopOf="@+id/textView9"
+        app:layout_constraintStart_toEndOf="@+id/petIcon"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:layout_constraintVertical_bias="0.958" />
+
+    <View
+        android:id="@+id/view5"
+        android:layout_width="124dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="28dp"
+        android:background="#1D2B83"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view6"
+        android:layout_width="124dp"
+        android:layout_height="1dp"
+        android:background="#1D2B83"
+        app:layout_constraintBottom_toBottomOf="@+id/view8"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toBottomOf="@+id/view5"
+        app:layout_constraintVertical_bias="0.611" />
+
+    <View
+        android:id="@+id/view7"
+        android:layout_width="124dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="28dp"
+        android:background="#1D2B83"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view8"
+        android:layout_width="124dp"
+        android:layout_height="1dp"
+        android:background="#1D2B83"
+        app:layout_constraintEnd_toEndOf="@+id/view5"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <View
+        android:id="@+id/viewhz1"
+        android:layout_width="1dp"
+        android:layout_height="116dp"
+        android:layout_marginStart="16dp"
+        android:background="#1D2B83"
+        app:layout_constraintStart_toEndOf="@+id/petIcon"
+        app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="1dp"
+        android:layout_height="115dp"
+        android:layout_marginStart="79dp"
+        android:background="#1D2B83"
+        app:layout_constraintStart_toEndOf="@+id/petIcon"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <View
+        android:id="@+id/viewhz2"
+        android:layout_width="1dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="12dp"
+        android:background="#1D2B83"
+        app:layout_constraintEnd_toEndOf="@+id/textViewIdealR"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="@+id/textViewIdealR"
+        app:layout_constraintTop_toTopOf="@+id/textViewIdealR" />
+
+    <View
+        android:id="@+id/viewhz3"
+        android:layout_width="1dp"
+        android:layout_height="115dp"
+        android:background="#1D2B83"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/viewhz2"
+        app:layout_constraintTop_toTopOf="@+id/viewhz1" />
+
+    <TextView
+        android:id="@+id/textViewIdealR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2.70dp"
+        android:text=" Ideal  Range\n  Min     Max"
+        android:textAlignment="center"
+        android:textColor="#303030"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/view4"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
+        android:text="Enclosure \nTemperature"
+        android:textAlignment="viewStart"
+        android:textColor="#303030"
+        android:textSize="9sp"
+
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toTopOf="@+id/viewhz1" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Humidity"
+        android:textAlignment="viewStart"
+        android:textColor="#303030"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="@+id/textView19"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Water \nTemperature"
+        android:textAlignment="viewStart"
+        android:textColor="#303030"
+        android:textSize="9sp"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Readings"
+        android:textAlignment="viewStart"
+        android:textColor="#303030"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewIdealR"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view5"
+        app:layout_constraintTop_toTopOf="@+id/textViewIdealR" />
+
+    <ImageView
+        android:id="@+id/noInternet"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/nowifi"
+        app:layout_constraintBottom_toBottomOf="@+id/petIcon"
+        app:layout_constraintEnd_toEndOf="@+id/LoadImage"
+        app:layout_constraintStart_toStartOf="@+id/LoadImage"
+        app:layout_constraintTop_toTopOf="@+id/petIcon" />
+
+    <TextView
+        android:id="@+id/textViewws"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Water Level Status:"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/ideal_water_tempmax"
+        app:layout_constraintStart_toStartOf="@+id/IdGaugeHum"
+        app:layout_constraintTop_toBottomOf="@+id/ideal_humidity" />
+
+    <TextView
+        android:id="@+id/waterlevelStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#169C03"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/IdGaugeHum"
+        app:layout_constraintStart_toStartOf="@+id/textViewws"
+        app:layout_constraintTop_toBottomOf="@+id/textViewws" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonCamSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        android:text="Camera Settings"
+        android:textSize="12sp"
+        android:onClick="opencamerasettings"
+        app:layout_constraintBottom_toBottomOf="@+id/flash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/flash"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
